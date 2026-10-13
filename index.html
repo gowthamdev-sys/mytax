@@ -2,27 +2,40 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Malaysia Income Tax Calculator — YA 2026</title>
+<title>Malaysia Tax Calculator | YA 2026</title>
 <style>
-:root{font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;color:#182235;background:#f3f6fb}
-*{box-sizing:border-box}body{margin:0;padding:22px}.wrap{max-width:1040px;margin:auto}header{margin:0 0 20px}h1{font-size:clamp(1.55rem,4vw,2.15rem);margin:0 0 7px}p{line-height:1.5;color:#5b667a}.panel{background:#fff;border:1px solid #e0e6ef;border-radius:16px;padding:22px;margin:14px 0;box-shadow:0 7px 22px #18223508}h2{font-size:1.12rem;margin:0 0 14px}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.field label{display:block;font-size:.9rem;font-weight:650;margin-bottom:6px}.field input,.field select{font:inherit;width:100%;padding:11px 12px;border:1px solid #cbd5e1;border-radius:9px;background:white}.field small{display:block;color:#758096;margin-top:5px;line-height:1.35}.full{grid-column:1/-1}.summary{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.tile{background:#f7f9fc;border:1px solid #e5eaf2;border-radius:12px;padding:15px}.tile span{display:block;font-size:.84rem;color:#596579;margin-bottom:8px}.tile strong{font-size:clamp(1.05rem,2.6vw,1.55rem);overflow-wrap:anywhere}.tile.main{background:#eaf2ff;border-color:#cbdcff}.tile.main strong{color:#174ea6}.note{font-size:.84rem;color:#667187;line-height:1.55}.tablewrap{overflow-x:auto}table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}th,td{text-align:right;padding:10px 9px;border-bottom:1px solid #e7ebf2;white-space:nowrap}th{background:#f8fafc;color:#5b667a;font-size:.82rem}td:first-child,th:first-child{text-align:left}tr.active{background:#fff6d9;font-weight:650}.totals{display:flex;justify-content:space-between;gap:10px;padding:9px 0;border-bottom:1px solid #edf0f5}.totals:last-child{border:0}.pill{display:inline-block;background:#eef2f8;padding:4px 8px;border-radius:99px;font-size:.8rem;color:#4e5c72}.links a{color:#174ea6}.btn{border:0;border-radius:9px;padding:11px 15px;background:#174ea6;color:#fff;font:inherit;font-weight:650;cursor:pointer}.btn.secondary{background:#edf2f8;color:#243247}.actions{display:flex;gap:10px;flex-wrap:wrap}
-@media(max-width:650px){body{padding:12px}.panel{padding:15px}.grid,.summary{grid-template-columns:1fr}.tile{display:flex;justify-content:space-between;align-items:center;gap:10px}.tile span{margin:0}.tile strong{text-align:right}.full{grid-column:auto}}
+:root{font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#17233b;background:#f3f6fc;font-synthesis:none;text-rendering:optimizeLegibility}
+*{box-sizing:border-box}body{margin:0;padding:0 0 36px;background:linear-gradient(135deg,#edf4ff 0%,#f7f8fc 46%,#eefbf7 100%);min-height:100vh}
+.hero{padding:42px 22px 74px;background:linear-gradient(120deg,#112d5c 0%,#1756a9 55%,#168b91 100%);color:#fff}
+.hero-inner{max-width:1080px;margin:auto}.eyebrow{display:inline-flex;align-items:center;gap:8px;padding:7px 11px;border-radius:999px;background:#ffffff1e;border:1px solid #ffffff35;font-size:.78rem;font-weight:750;letter-spacing:.08em;text-transform:uppercase}
+.hero h1{font-size:clamp(2rem,5vw,3.15rem);letter-spacing:-.04em;line-height:1.08;margin:17px 0 12px}.hero p{max-width:720px;color:#e0edff;margin:0;line-height:1.65;font-size:1.02rem}
+.wrap{max-width:1080px;margin:-42px auto 0;padding:0 18px;position:relative}
+.panel{background:#fff;border:1px solid #e2e9f4;border-radius:18px;padding:24px;margin:16px 0;box-shadow:0 12px 35px #17345d0b}
+.section-title{display:flex;align-items:center;gap:12px;margin-bottom:18px}.section-num{display:grid;place-items:center;flex:0 0 38px;height:38px;border-radius:12px;background:#e8f1ff;color:#1554a4;font-weight:800}.section-title h2{font-size:1.12rem;margin:0;letter-spacing:-.01em}.section-title p{margin:4px 0 0;color:#748198;font-size:.88rem}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.field label{display:block;font-size:.9rem;font-weight:700;margin-bottom:7px;color:#273651}.field input,.field select{font:inherit;font-size:.98rem;width:100%;padding:12px 13px;border:1px solid #ccd7e6;border-radius:10px;background:#fff;color:#15233a;outline:none;transition:border-color .15s,box-shadow .15s}.field input:focus,.field select:focus{border-color:#3478d4;box-shadow:0 0 0 3px #3478d41c}.field small{display:block;color:#748198;margin-top:6px;line-height:1.4;font-size:.79rem}.field.highlight input{font-size:1.25rem;font-weight:750;border-color:#7ca9e8;background:#f7faff}
+.full{grid-column:1/-1}.summary{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}
+.tile{background:linear-gradient(145deg,#f9fbff,#f4f7fc);border:1px solid #e5ebf4;border-radius:14px;padding:17px;min-width:0}.tile span{display:block;font-size:.82rem;color:#61708a;margin-bottom:10px}.tile strong{font-size:clamp(1.05rem,2.5vw,1.55rem);letter-spacing:-.025em;overflow-wrap:anywhere;color:#182945}
+.tile.main{background:linear-gradient(135deg,#e5f0ff,#e5fbf5);border-color:#b9d9e9}.tile.main strong{color:#075e79}.tile.main span{color:#335f78}
+.note{font-size:.83rem;color:#697890;line-height:1.6}.tablewrap{overflow-x:auto;border:1px solid #e5ebf4;border-radius:12px}table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums;background:#fff}th,td{text-align:right;padding:12px 11px;border-bottom:1px solid #e9eef5;white-space:nowrap}th{background:#f5f8fd;color:#5a6b84;font-size:.78rem;text-transform:uppercase;letter-spacing:.04em}td{font-size:.9rem}td:first-child,th:first-child{text-align:left}tr.active{background:#fff6dc}tr.active td{font-weight:750;color:#674800}tbody tr:last-child td{border-bottom:0}
+.pill{display:inline-block;background:#e8f4ff;color:#174e92;padding:6px 10px;border-radius:99px;font-size:.78rem;font-weight:750}.btn{border:0;border-radius:10px;padding:12px 16px;background:linear-gradient(120deg,#1758ad,#147d91);color:#fff;font:inherit;font-weight:750;cursor:pointer;box-shadow:0 5px 13px #1758ad24;transition:transform .15s,filter .15s}.btn:hover{filter:brightness(1.06);transform:translateY(-1px)}.btn.secondary{background:#f0f4fa;color:#2c4261;box-shadow:none;border:1px solid #dce5f0}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}.totals{display:flex;justify-content:space-between;gap:10px;padding:9px 0;border-bottom:1px solid #edf0f5}.totals:last-child{border:0}.links a{color:#1758ad;font-weight:650}.footer{text-align:center;color:#7b879a;font-size:.8rem;padding:8px 18px 0}
+@media(max-width:700px){.hero{padding:30px 17px 65px}.wrap{padding:0 11px}.panel{padding:17px;border-radius:15px}.grid,.summary{grid-template-columns:1fr}.full{grid-column:auto}.tile{display:flex;justify-content:space-between;align-items:center;gap:14px}.tile span{margin:0}.tile strong{text-align:right}.section-title{align-items:flex-start}.tablewrap{margin-left:-2px;margin-right:-2px}th,td{padding:10px 8px;font-size:.82rem}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 </style></head>
-<body><div class="wrap">
-<header><h1>Malaysia Income Tax Calculator</h1><p>YA 2026 (income earned in calendar year 2026) · Resident individual estimate with personal reliefs and rebates.</p><span class="pill">Uses current YA 2026 rates, not the rates in the original image</span></header>
+<body><header class="hero"><div class="hero-inner"><span class="eyebrow">🇲🇾 Malaysia · Tax year 2026</span><h1>Income Tax Calculator</h1><p>Estimate your annual tax in seconds. Adjust your income, select your residency status and enter eligible reliefs to see a live progressive tax breakdown.</p></div></header>
+<div class="wrap">
 <section class="panel">
-<h2>1. Income and tax status</h2><div class="grid">
-<div class="field"><label for="income">Annual taxable income before personal reliefs (RM)</label><input id="income" type="number" min="0" step="0.01" value="222000"><small>Include taxable salary, bonus and other taxable income. Do not enter chargeable income here.</small></div>
+<div class="section-title"><span class="section-num">01</span><div><h2>Income & tax status</h2><p>Start with your annual income before personal reliefs.</p></div></div><div class="grid">
+<div class="field highlight"><label for="income">Annual taxable income before personal reliefs (RM)</label><input id="income" type="number" min="0" step="0.01" value="300000"><small>Include taxable salary, bonus and other taxable income. Do not enter chargeable income here.</small></div>
 <div class="field"><label for="status">Tax residence status</label><select id="status"><option value="resident">Tax resident</option><option value="nonresident">Non-resident</option></select><small>Non-resident employment/business income is generally taxed at 30%; personal reliefs generally do not apply.</small></div>
 <div class="field"><label for="spouse">Spouse relief (RM)</label><select id="spouse"><option value="0">No spouse relief</option><option value="4000">Claim spouse relief — RM4,000</option></select></div>
-<div class="field"><label for="children">Number of eligible children under 18</label><input id="children" type="number" min="0" max="30" step="1" value="1"><small>RM2,000 relief per eligible child; special education/disability categories are not included in this count.</small></div>
+<div class="field"><label for="children">Number of eligible children under 18</label><input id="children" type="number" min="0" max="30" step="1" value="0"><small>RM2,000 relief per eligible child; special education/disability categories are not included in this count.</small></div>
 </div></section>
-<section class="panel"><h2>2. Personal tax reliefs</h2><p class="note">Enter eligible amounts actually paid/contributed during the year. The calculator caps the common relief categories below. RM9,000 self relief is applied automatically for residents.</p>
+<section class="panel"><div class="section-title"><span class="section-num">02</span><div><h2>Personal tax reliefs</h2><p>Only enter reliefs you are eligible to claim.</p></div></div><p class="note">Enter eligible amounts actually paid/contributed during the year. The calculator caps the common relief categories below. RM9,000 self relief is applied automatically for residents.</p>
 <div class="grid">
-<div class="field"><label for="epf">EPF contributions (maximum RM4,000)</label><input id="epf" type="number" min="0" value="4000"></div>
+<div class="field"><label for="epf">EPF contributions (maximum RM4,000)</label><input id="epf" type="number" min="0" value="0"></div>
 <div class="field"><label for="life">Life insurance / takaful or qualifying voluntary EPF (maximum RM3,000)</label><input id="life" type="number" min="0" value="0"></div>
 <div class="field"><label for="medicalins">Education / medical insurance (maximum RM4,000)</label><input id="medicalins" type="number" min="0" value="0"></div>
-<div class="field"><label for="socso">SOCSO contributions (maximum RM350)</label><input id="socso" type="number" min="0" value="350"></div>
+<div class="field"><label for="socso">SOCSO contributions (maximum RM350)</label><input id="socso" type="number" min="0" value="0"></div>
 <div class="field"><label for="prs">PRS / deferred annuity (maximum RM3,000)</label><input id="prs" type="number" min="0" value="0"></div>
 <div class="field"><label for="lifestyle">Lifestyle: books, computer/phone/tablet, internet, qualifying courses (maximum RM2,500)</label><input id="lifestyle" type="number" min="0" value="0"></div>
 <div class="field"><label for="parents">Parents/grandparents medical and qualifying care (maximum RM8,000)</label><input id="parents" type="number" min="0" value="0"></div>
@@ -38,9 +51,9 @@
 <div class="field"><label for="other">Other eligible reliefs not listed (RM)</label><input id="other" type="number" min="0" value="0"><small>Enter the already-verified allowable amount. This field is not capped automatically.</small></div>
 <div class="field"><label for="zakat">Zakat / qualifying religious dues paid (rebate, RM)</label><input id="zakat" type="number" min="0" value="0"><small>Applied as a rebate after tax is calculated, up to the tax charged.</small></div>
 </div>
-<div class="actions" style="margin-top:16px"><button class="btn" id="reset" type="button">Reset sample values</button><button class="btn secondary" id="clear" type="button">Clear relief inputs</button></div>
+<div class="actions" style="margin-top:16px"><button class="btn" id="reset" type="button">Reset calculator</button><button class="btn secondary" id="clear" type="button">Clear all reliefs</button></div>
 </section>
-<section class="panel"><h2>3. Estimated result</h2><div class="summary">
+<section class="panel"><div class="section-title"><span class="section-num">03</span><div><h2>Your estimated tax</h2><p>Results update automatically as you change the inputs.</p></div></div><div class="summary">
 <div class="tile main"><span>Estimated annual tax payable</span><strong id="tax">RM 0.00</strong></div>
 <div class="tile"><span>Chargeable income</span><strong id="chargeable">RM 0.00</strong></div>
 <div class="tile"><span>Effective tax rate on income</span><strong id="effective">0.00%</strong></div>
@@ -51,8 +64,10 @@
 <div class="tablewrap" style="margin-top:20px"><table><thead><tr><th>YA 2026 chargeable income band</th><th>Rate</th><th>Taxable in band</th><th>Tax</th></tr></thead><tbody id="bands"></tbody></table></div>
 <p class="note" id="rebateNote"></p>
 </section>
-<section class="panel"><h2>Important notes and sources</h2><p class="note">This is an estimate for a tax-resident individual using the YA 2026 progressive tax schedule and selected relief caps. It does not fully model every relief, special status, income type, joint assessment, PCB/MTD, foreign income, dividend/LLP rules, or all eligibility conditions. For official filing, verify each claim and keep supporting receipts.</p>
-<p class="note links">Sources: <a href="https://www.hasil.gov.my/individu/kadar-cukai/" target="_blank" rel="noopener">LHDN tax rates</a> · <a href="https://www.pwc.com/my/en/publications/mtb/personal-income-tax.html" target="_blank" rel="noopener">PwC Malaysia Tax Booklet — YA 2026 rates and reliefs</a> · <a href="https://payroll.my/" target="_blank" rel="noopener">Payroll.my calculator reference</a></p></section>
+<section class="panel"><div class="section-title"><span class="section-num">i</span><div><h2>Notes & official references</h2><p>Use this estimate as a planning aid, not as a filing submission.</p></div></div><p class="note">This is an estimate for a tax-resident individual using the YA 2026 progressive tax schedule and selected relief caps. It does not fully model every relief, special status, income type, joint assessment, PCB/MTD, foreign income, dividend/LLP rules, or all eligibility conditions. For official filing, verify each claim and keep supporting receipts.</p>
+<p class="note">References: Inland Revenue Board of Malaysia (LHDN) — Individual Income Tax Rates; PwC Malaysia — Tax Booklet, Personal Income Tax (YA 2026); Payroll.my — Malaysia payroll and income tax calculator reference.</p></section>
+</div>
+<footer class="footer">Malaysia Income Tax Calculator · YA 2026 · Estimates are calculated locally in your browser.</footer>
 </div>
 <script>
 const $=id=>document.getElementById(id);
@@ -104,7 +119,7 @@ function calculate(){
 }
 document.querySelectorAll("input,select").forEach(el=>el.addEventListener("input",calculate));
 $("clear").addEventListener("click",()=>{for(const id of Object.keys(fields))$(id).value=0;$("spouse").value=0;$("children").value=0;$("zakat").value=0;$("other").value=0;calculate()});
-$("reset").addEventListener("click",()=>{ $("income").value=222000;$("status").value="resident";$("spouse").value=4000;$("children").value=1;for(const [id,cap] of Object.entries(fields))$(id).value=(id==="epf"||id==="socso")?cap:0;$("other").value=0;$("zakat").value=0;calculate()});
+$("reset").addEventListener("click",()=>{ $("income").value=300000;$("status").value="resident";$("spouse").value=0;$("children").value=0;for(const [id,cap] of Object.entries(fields))$(id).value=0;$("other").value=0;$("zakat").value=0;calculate()});
 calculate();
 </script>
 </body></html>
